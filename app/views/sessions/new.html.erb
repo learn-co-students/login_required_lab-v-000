@@ -1,0 +1,6 @@
+<h1>Please login</h1>
+
+<%= form_tag sessions_path, method: "post" do %>
+  <%= text_field_tag(:name, "Name") %>
+  <%= submit_tag "Login" %>
+<% end %>
