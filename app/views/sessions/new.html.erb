@@ -1,5 +1,6 @@
-Login Page
+<h2>Login Page</h2>
 
-Hello!
-
-<%= link_to secret_path %>
+<%= form_tag '/login' do %>
+  <%= text_field_tag :name %><br>
+  <%= submit_tag "Log in" %>
+<% end %>
