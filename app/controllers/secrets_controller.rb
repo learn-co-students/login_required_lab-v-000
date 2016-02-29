@@ -11,11 +11,7 @@ class SecretsController < ApplicationController
 	private
 
 	def logged_in?
-		if current_user.nil? || current_user.empty?
-			redirect_to new_session_path
-		else
-			current_user
-		end
+		redirect_to new_session_path unless current_user
 	end
 
 end
