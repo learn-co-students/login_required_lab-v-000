@@ -53,4 +53,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  post 'show', to: 'secrets#show'
+  post 'destory', to: 'sessions#destroy'
+  resources :sessions, only: [:create, :new]
 end
