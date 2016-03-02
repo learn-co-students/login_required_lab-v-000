@@ -8,13 +8,13 @@ class SessionsController < ApplicationController
     if current_user && !current_user.empty?
       render :welcome
     else
-      redirect_to new_session_path
+      redirect_to login_path
     end
   end
 
   def destroy
     session[:name] = nil
-    redirect_to new_session_path
+    redirect_to login_path
   end
 
 end

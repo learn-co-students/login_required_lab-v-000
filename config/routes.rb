@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :sessions, only: [:new, :create]
+  resources :sessions, only: [:create]
   
-  get 'sessions/destroy' => 'sessions#destroy'
+  get 'login' => 'sessions#new'
+  post 'logout' => 'sessions#destroy'
   get 'secrets/show' => 'secrets#show'
 
   root 'sessions#new'
