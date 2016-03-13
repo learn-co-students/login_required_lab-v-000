@@ -1,0 +1,8 @@
+<h1>Log In:</h1>
+
+<div>
+<%= form_tag('/login', method: :post) do %>
+  <%= text_field_tag :name %>
+  <%= submit_tag "create user" %>
+<% end %>
+</div>
