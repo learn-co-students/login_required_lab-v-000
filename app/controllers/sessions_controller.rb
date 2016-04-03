@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
   def create
     if params[:name] && params[:name].length > 0
       session[:name] = params[:name]
+      redirect_to "/"
     else
       redirect_to sessions_new_path
     end
@@ -13,6 +14,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:name] = nil if session[:name]
+    redirect_to sessions_new_path
   end
   
   private 

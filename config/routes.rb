@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/', to: "welcome#index"
+  
   get 'secrets/show', to: "secrets#show"
 
   get 'sessions/new', to: "sessions#new"
