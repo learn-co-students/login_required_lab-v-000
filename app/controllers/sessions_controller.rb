@@ -2,7 +2,7 @@ require 'pry'
 class SessionsController < ApplicationController
 
   def index
-    @username = session[:name]
+    @username = current_user
   end
 
   def new
