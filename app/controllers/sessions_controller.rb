@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:name] = nil
+    session.clear
     redirect_to new_session_path
   end
 
