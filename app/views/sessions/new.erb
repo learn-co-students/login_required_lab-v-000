@@ -1,0 +1,6 @@
+<h1>Name Please</h1>
+
+<%= form_tag("/sessions", method: :post) do %>
+<%= text_field_tag "name" %><br>
+<%= submit_tag "Create" %>
+<% end %>
