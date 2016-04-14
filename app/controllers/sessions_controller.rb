@@ -9,13 +9,14 @@ class SessionsController < ApplicationController
   def create
     if current_user
       redirect_to sessions_path
-    else
-      session[:name] = params[:name]
-      redirect_to new_session_path
+    elsif
+      if params[:name] == nil || params[:name] == ""
+        redirect_to new_session_path
+      else
+        session[:name] = params[:name]
+        redirect_to sessions_path
+      end
     end
-  end
-
-  def show
   end
 
   def destroy
@@ -23,6 +24,4 @@ class SessionsController < ApplicationController
     redirect_to new_session_path
   end
 
-  def show
-  end
 end
