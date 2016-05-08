@@ -1,8 +1,12 @@
 class SessionsController < ApplicationController
 
   def create
-    current_user = params[:name]
-    redirect_to '/sessions/welcome'
+    if params[:name] && !params[:name].empty?
+      session[:name] = params[:name]
+      redirect_to '/sessions/welcome'
+    else
+      redirect_to root_path
+    end
   end
 
   def show
@@ -15,8 +19,12 @@ class SessionsController < ApplicationController
   end
 
   def login
-    current_user = params[:name]
-    redirect_to sessions_welcome_path
+    if params[:name] && !params[:name].empty?
+      session[:name] = params[:name]
+      redirect_to '/sessions/welcome'
+    else
+      redirect_to root_path
+    end
   end
 
   def welcome
@@ -24,7 +32,12 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-
+    if current_user
+      session[:name] = nil
+    end
+    redirect_to root_path
   end
+
+
 
 end

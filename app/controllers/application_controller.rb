@@ -6,11 +6,9 @@ class ApplicationController < ActionController::Base
 
 
   def current_user
-    @current_user = session[:name]
+    session[:name]
   end
 
-  def require_login
-    return redirect_to '/sessions/new' unless current_user
-  end
+
 
 end
