@@ -16,9 +16,7 @@ class SessionsController < ApplicationController
   def destroy
     if session[:name]
       session.clear
-      redirect_to sessions_path
-    else
-      redirect_to sessions_path
     end
+    redirect_to sessions_path
   end
 end
