@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe SecretsController do
   describe 'get show' do
     it "should redirect to login if you're not logged in" do
+      # binding.pry
       get :show
       expect(response).to redirect_to controller: 'sessions', action: 'new'
     end
