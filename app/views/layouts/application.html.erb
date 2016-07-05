@@ -8,6 +8,12 @@
 </head>
 <body>
 
+<% if session.include? :name %>
+  <%= form_tag sessions_destroy_path do %>
+    <%= submit_tag "Log out" %>
+  <% end %>
+<% end %>
+
 <%= yield %>
 
 </body>
