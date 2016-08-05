@@ -16,12 +16,12 @@ class SessionsController < ApplicationController
   end
 
   # Displays login form /login
-  def new  
-    session.delete(:name)    
+  def new    
   end
 
   def destroy
     session.delete(:name)
+    redirect_to login_path
   end
 
 end
