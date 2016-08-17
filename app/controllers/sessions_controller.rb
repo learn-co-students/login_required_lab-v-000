@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
 
   def create
     binding.pry
+    session[:name] = params[:name]
   end
 
 end
