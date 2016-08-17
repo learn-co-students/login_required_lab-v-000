@@ -14,11 +14,10 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    #only call db once instead of each time
     @current_user ||= session[:name]
   end
-  # methods built in controllers do not go to ActionView part of code
-  helper_method :current_user
 
+
+  helper_method :current_user
 
 end
