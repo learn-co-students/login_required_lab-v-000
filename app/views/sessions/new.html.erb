@@ -1,7 +1,7 @@
 <h1>Log In</h1>
 
-<%= form_tag sessions_create_path do %>
+<%= form_tag login_path do %>
   <%= label_tag "Username: " %>
   <%= text_field_tag :name, params[:name], placeholder: "e.g. surfer_boy_103" %>
-  <%= submit_tag "Submit" %>
+  <%= submit_tag "Log In" %>
 <% end %>
