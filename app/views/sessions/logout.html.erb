@@ -1,0 +1,4 @@
+<h1><%= session[:name] %></h1>
+<%= form_tag session_path, method: "delete" %>
+  <%= submit_tag "Delete" %>
+<% end %>
