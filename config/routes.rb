@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'sessions/user' => 'sessions#current_user'
   get 'sessions/new_user' => 'sessions#create'
   get '/secrets' => 'secrets#show'
-  get '/logout' => 'sessions#destroy'
+  post '/logout' => 'sessions#destroy' #must be `post`
 
 
   # The priority is based upon order of creation: first created -> highest priority.
