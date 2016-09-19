@@ -1,12 +1,14 @@
 class SecretsController < ApplicationController
   before_action :require_login
 
-
-  def require_login
-    return head(:forbidden) unless session.include? :user_id
-  end
-
   def show
-    render :'secrets'
   end
+
+private
+  def require_login
+    # return head(:forbidden) unless session.include? :username
+    redirect_to login_path unless session.include? :name
+  end
+
+
 end
