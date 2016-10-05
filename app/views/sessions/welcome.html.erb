@@ -1,0 +1,7 @@
+<p>Hello, <%= session[:name] %>!</p>
+<p>Here is <a href="/secrets/show">the link</a> to the secret page.</p>
+<p>
+<%= form_tag("/destroy", method: "post") do %>
+  <%= submit_tag("Delete your account.") %>
+<% end %>
+</p>
