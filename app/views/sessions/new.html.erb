@@ -1,0 +1,7 @@
+<h1>Sessions#new</h1>
+<p>Find me in app/views/sessions/new.html.erb</p>
+<%= form_tag '/sessions/create' do%>
+<%=label_tag 'name'%>
+<%= text_field_tag 'name', "Enter your name"%>
+<%= button_tag "submit"%>
+<%end%>
