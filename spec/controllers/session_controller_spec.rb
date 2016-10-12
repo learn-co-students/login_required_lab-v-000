@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+require 'pry'
 RSpec.describe SessionsController do
   describe 'create' do
     it 'redirects to login page if :name is nil' do
