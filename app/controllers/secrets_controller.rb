@@ -1,12 +1,8 @@
 class SecretsController < ApplicationController
+  before_action :require_login 
 
   # secrets page => /show
   def show
-    if current_user == nil
-      redirect_to '/' 
-    else
-      render :show
-    end
   end
 
 end

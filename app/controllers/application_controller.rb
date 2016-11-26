@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def current_user
-    @current_user = session[:name] ||= nil
+    session[:name] 
+  end
+
+  def require_login
+    redirect_to '/' unless current_user
   end
 end

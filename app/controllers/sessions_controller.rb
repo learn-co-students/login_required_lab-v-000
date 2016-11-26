@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
   def create
     if params[:name].nil? || params[:name].empty? 
-      redirect_to "/", alert: "Must enter a name"
+      redirect_to "/"
     else
       session[:name] = params[:name]
       @user = session[:name]
