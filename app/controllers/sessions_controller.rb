@@ -1,10 +1,11 @@
 class SessionsController < ApplicationController
+ 
 
   def new
   end
 
   def show
-  
+    # the sessions page that allows you access to secrets page
   end
 
   def create
@@ -21,4 +22,5 @@ class SessionsController < ApplicationController
     session[:name] = nil
     redirect_to '/'
   end
+
 end
