@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
- 
-
+    before_action :require_login, only: [:show]
   def new
   end
 
@@ -19,7 +18,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:name] = nil
+    session.delete :name
     redirect_to '/'
   end
 
