@@ -1,6 +1,5 @@
 class SecretsController < ApplicationController
 
-
   # secrets page => /show
   def show
     if current_user == nil
