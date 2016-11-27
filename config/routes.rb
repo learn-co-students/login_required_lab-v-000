@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'sessions#new'   
 
   get 'sessions/show' => 'sessions#show'
-  get 'sessions/destroy' => 'sessions#destroy'
+  post '/logout' => 'sessions#destroy'
   get 'secrets/show' => 'secrets#show'
 
 
