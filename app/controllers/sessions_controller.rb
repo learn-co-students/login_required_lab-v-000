@@ -5,21 +5,21 @@ class SessionsController < ApplicationController
 
   def show
     # the sessions page that allows you access to secrets page
+    # must be logged in
   end
 
   def create
     if params[:name].nil? || params[:name].empty? 
-      redirect_to "/"
+      redirect_to root_path
     else
-      session[:name] = params[:name]
-      @user = session[:name]
-      render 'sessions/show'
+      @user = session[:name] = params[:name]
+      render sessions_show_path
     end
   end
 
   def destroy
     session[:name] = nil
-    redirect_to '/'
+    redirect_to root_path
   end
 
 end

@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  get '/' => 'sessions#new'   
+  root 'sessions#new'   
 
-  get '/show' => 'secrets#show'
   get 'sessions/show' => 'sessions#show'
   get 'sessions/destroy' => 'sessions#destroy'
+  get '/show' => 'secrets#show'
 
 
   resources :sessions, only: [:new, :create]
