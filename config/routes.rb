@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'sessions/show' => 'sessions#show'
   get 'sessions/destroy' => 'sessions#destroy'
-  get '/show' => 'secrets#show'
+  get 'secrets/show' => 'secrets#show'
 
 
   resources :sessions, only: [:new, :create]
