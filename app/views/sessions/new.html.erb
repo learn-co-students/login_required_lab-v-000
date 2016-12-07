@@ -1,0 +1,6 @@
+<h1>Login to see a secret.</h1>
+<%= form_tag(controller: 'sessions', action: 'new') do %>
+  <%= text_field_tag :name %>
+
+  <%= submit_tag 'Login' %>
+<% end %>
