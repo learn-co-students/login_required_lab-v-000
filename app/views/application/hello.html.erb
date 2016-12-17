@@ -1,2 +1,2 @@
 <h1>Hi, <%= session[:name] %>.</h1>
-<%= button_to 'logout', action: '/logout', method: 'delete' %>
+<%= button_to 'logout', controller: 'sessions', action: 'destroy', method: 'delete' %>

@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
-
+    current_user
   end
 
   def create
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    if name_check
+    if !session[:name].nil? && !session[:name].empty?
       session.delete :name
     end
     redirect_to controller: 'application', action: 'hello'
