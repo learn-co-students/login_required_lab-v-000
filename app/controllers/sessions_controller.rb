@@ -1,18 +1,20 @@
 class SessionsController < ApplicationController
 
-  skip_before_action :require_login, only: [:new, :create]
-
-
   def new
   end
 
   def create
-
-    redirect_to 'index'
+    session[:name] = params[:name]
+    if current_user.nil? || current_user.empty?
+      redirect_to '/'
+    else
+      redirect_to '/home'
+    end
   end
 
-  def index
-    @username = params[:name]
+  def destroy
+    session.clear
+    redirect_to '/'
   end
 
 end
