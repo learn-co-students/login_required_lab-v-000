@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-      session.delete :name
+      session.delete
     end
 
     private
@@ -22,6 +22,5 @@ class SessionsController < ApplicationController
     def require_login
       redirect_to controller: 'sessions', action: 'new' unless session.include? :user_id
     end
-
 
 end
