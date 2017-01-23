@@ -25,7 +25,9 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-  resources :secrets, only: :show
+  resource :secrets, only: :show
+  resources :sessions, only: [:new, :create]
+  resource :sessions, only: :destroy
 
   # Example resource route with sub-resources:
   #   resources :products do
