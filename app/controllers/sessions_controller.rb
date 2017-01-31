@@ -11,7 +11,12 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       session[:name] = params[:name]
-      render :show
+      render :welcome
+    end
+
+    def destroy
+      session.delete("name") if !session[:name].nil?
+      redirect_to root_path
     end
   end
 
