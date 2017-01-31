@@ -5,17 +5,8 @@ class SecretsController < ApplicationController
 		#should redirect to login if not logged in
 	end
 
-	def index
-	end
+	
 
-	def create
-	end
-
-	private
-
-	def require_login
-		redirect_to new_session_path unless session[:name]
-	end
 
 end
 
