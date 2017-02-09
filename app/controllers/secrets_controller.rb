@@ -3,14 +3,14 @@ class SecretsController < ApplicationController
 
   def show  
     @user = params[:name]
-    # @secret = Secret.find(params[:id])
+    
   end
 
 
   private
 
   def require_login
-    return head(:forbidden) unless session.include? :name   
+    redirect_to '/sessions/new' unless session.include? :name   
   end
 
 end

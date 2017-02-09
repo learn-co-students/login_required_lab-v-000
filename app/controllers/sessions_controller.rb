@@ -8,5 +8,11 @@ class SessionsController < ApplicationController
     redirect_to '/sessions/new'
   end
 
+  def destroy
+    
+    session[:name] = nil
+    redirect_to root_url
+  end
+
 
 end
