@@ -1,0 +1,5 @@
+<h3>Log in with just your name.</h3>
+<%= form_tag({controller: 'sessions', action: 'create', method: 'post'}) do %>
+	<label>Name: </label>
+	<input type="text" name="name">
+<% end %>
