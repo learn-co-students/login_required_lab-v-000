@@ -1,0 +1,5 @@
+<h1>Hello, <%= session[:name] %>.</h1>
+
+<%= link_to "Can you keep a secret?", controller: 'secrets', action: 'show' %>
+
+<%= button_to "Logout", controller: 'sessions', action: 'destroy' %>
