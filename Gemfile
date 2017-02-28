@@ -45,3 +45,6 @@ group :development, :test do
   gem 'capybara'
 end
 
+
+gem 'learn-co'
+gem 'pry'
