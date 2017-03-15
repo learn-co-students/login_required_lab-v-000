@@ -15,14 +15,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:name] ? session.clear : session[:name] = nil
+    session.delete :name 
     redirect_to sessions_new_path
   end
 
-  private
-
-  def require_login
-   return head(:forbidden) unless session.include? :user_id
- end
 
 end
