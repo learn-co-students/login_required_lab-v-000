@@ -1,0 +1,5 @@
+<h1>Welcome, <%=@user%>!</h1>
+<h3><%= link_to "Click here to see the secret!", secrets_path %></h3>
+<%= form_tag sessions_destroy_path do %>
+<%= submit_tag "Logout" %>
+<%end%>
