@@ -1,6 +1,6 @@
 <h1>Sessions#login</h1>
 <p>Find me in app/views/sessions/login.html.erb</p>
-<form method="post" action="create">
-    <input type="text" name="name" >
-    <input type="submit">
-</form>
+<%= form_tag sessions_create_path, method:"post" do %>
+    <%= text_field_tag "name" %>
+    <%= button_tag %>
+<% end %>
