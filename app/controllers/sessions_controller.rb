@@ -9,12 +9,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    if session.include? :name
-      session.clear
-      redirect_to new_session_path
-    else
-      redirect_to new_session_path
-    end
+    session.delete :name
+    redirect_to new_session_path
   end
 
 end
