@@ -6,4 +6,10 @@ class ApplicationController < ActionController::Base
   def current_user
     session[:name]
   end
+
+  private
+
+  def require_logged_in
+    redirect_to new_session_path unless current_user
+  end
 end
