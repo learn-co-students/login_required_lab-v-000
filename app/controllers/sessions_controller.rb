@@ -6,8 +6,7 @@ class SessionsController < ApplicationController
 
   def create
     if params[:name] != "" && !params[:name].nil?
-      current_user = params[:name]
-      session[:name] = current_user
+      session[:name] = params[:name]
       @name = current_user
       render :show
     else
