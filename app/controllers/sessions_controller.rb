@@ -10,15 +10,15 @@ class SessionsController < ApplicationController
     session[:name] = params[:name]
     # binding.pry
     if current_user.present?
-      redirect_to("Show", "SecretsController")
+      redirect_to secret_path
     else
-      redirect_to '/login'
+      redirect_to login_path
     end
   end
 
   def destroy
     session.destroy
-    redirect_to '/login'
+    redirect_to secret_path
   end
 
   # private
