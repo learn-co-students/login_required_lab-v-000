@@ -8,15 +8,16 @@ class SessionsController < ApplicationController
 
   def create
     session[:name] = params[:name]
-    if current_user.blank?
-      redirect_to '/login'
-    else
+    # binding.pry
+    if current_user.present?
       redirect_to("Show", "SecretsController")
+    else
+      redirect_to '/login'
     end
   end
 
   def destroy
-    session[:name] = params[:name] = nil
+    session.destroy
     redirect_to '/login'
   end
 
