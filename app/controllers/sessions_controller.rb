@@ -2,6 +2,10 @@ class SessionsController < ApplicationController
   def new
   end
 
+  def show
+    @logged_in = !!current_user
+  end
+
   def create
     if params[:name].blank? || params[:name].nil?
       redirect_to(login_path)
