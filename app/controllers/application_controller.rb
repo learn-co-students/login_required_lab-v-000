@@ -1,12 +1,16 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  def hello
+    redirect_to controller: 'sessions', action: 'new' unless session[:name]
+  end
+  
   def current_user
-    current_user ||= session[:name] if session[:name]
+    session[:name]
   end
 
   private
-  def require_login
-    redirect_to '/login' unless current_user
+  def require_logged_in
+    redirect_to '/' unless current_user
   end
 end
