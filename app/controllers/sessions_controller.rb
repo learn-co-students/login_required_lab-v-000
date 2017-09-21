@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       session[:name] = params[:name]
-      redirect_to secret_path
+      redirect_to welcome_path
     end
   end
 
