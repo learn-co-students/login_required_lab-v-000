@@ -1,0 +1,7 @@
+<h1>Hi, <%= current_user %></h1>
+
+<%= link_to "super secret shhh", secrets_show_path %>
+
+<%= form_tag sessions_logout_path, method: "delete" do %>
+  <%= submit_tag "logout" %>
+<% end %>

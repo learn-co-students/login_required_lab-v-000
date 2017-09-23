@@ -1,0 +1,7 @@
+<h1>Log in</h1>
+
+<%= form_tag sessions_login_path, method: 'post' do %>
+  <%= label_tag "Username" %>
+  <%= text_field_tag "name" %>
+  <%= submit_tag "log in" %>
+<% end %>
