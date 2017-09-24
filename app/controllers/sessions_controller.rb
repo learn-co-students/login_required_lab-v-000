@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
   private
 
   def current_user
-    if session.include? :user_name
+    if session.include? :name
       render :show
     else
       render :new
