@@ -1,7 +1,7 @@
 class SecretsController < ApplicationController
 
   def show
-    if session.include? :user_name
+    if session.include? :name
       render :show
     else
       redirect_to controller: 'sessions', action: 'new'
