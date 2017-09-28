@@ -1,0 +1,9 @@
+<h1>Home Page</h1>
+
+<%= content_tag(:h4, "Hi, #{@user}") %>
+
+<%= link_to 'secret page', secret_path %><br><br>
+
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+    <input type=submit value='logout'>
+<% end %>
