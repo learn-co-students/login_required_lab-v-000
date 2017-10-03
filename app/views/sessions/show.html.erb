@@ -1,0 +1,7 @@
+<h1>Welcome <%= @user %></h1>
+
+<%=link_to "View Secrets", secrets_show_path %><br>
+
+<%= form_tag "/logout" do %>
+  <%= submit_tag 'Logout' %>
+<% end %>
