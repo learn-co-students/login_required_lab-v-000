@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  root 'sessions#new'
+  root 'application#hello'
   get '/showmethemoney', to: 'secrets#show'
-  get '/welcome', to: 'sessions#show'
+ 
+  get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   post '/logout', to: 'sessions#destroy'
 

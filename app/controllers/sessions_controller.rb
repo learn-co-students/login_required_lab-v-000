@@ -2,9 +2,7 @@ class SessionsController < ApplicationController
   before_action :require_login, only: [:show]
 
   def new
-    if current_user
-      redirect_to '/welcome'
-    end
+
   end
 
   def show
@@ -14,22 +12,15 @@ class SessionsController < ApplicationController
   def create
     if params[:name] && params[:name].strip != ""
       session[:name] = params[:name]
-      redirect_to '/welcome'
-    else
       redirect_to '/'
+    else
+      redirect_to '/login'
     end
   end
 
   def destroy
     session.delete :name
-    redirect_to '/'
+    redirect_to '/login'
   end
 
-  private
-
-  def require_login
-    if !current_user
-      redirect_to '/'
-    end  
-  end
 end
