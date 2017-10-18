@@ -1,14 +1,13 @@
 class SessionsController < ApplicationController
 	def new
-		redirect_to :login
 	end
 
 	def create
 		if params[:name].nil? || params[:name].empty?
-			redirect_to '/'
+			redirect_to login_path
 		elsif params[:name]
 			session[:name] = params[:name]
-			render :'sessions/logged_in'
+			render :'application/welcome'
 		end
 	end
 
