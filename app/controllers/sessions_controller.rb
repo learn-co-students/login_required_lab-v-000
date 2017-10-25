@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  before_action :require_login
 
   def new
     if current_user.present?
@@ -18,6 +17,5 @@ class SessionsController < ApplicationController
     session.destroy
     redirect_to root_path
   end
-
 
 end
