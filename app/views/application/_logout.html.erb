@@ -1,0 +1,15 @@
+<div>
+  <h1>Hi, <%= session[:name] %></h1>
+</div>
+
+<div>
+  <%= button_to 'View Secret', secret_path, method: 'get' %>
+</div>
+
+<br />
+
+<div>
+  <%= form_tag logout_path do %>
+    <%= submit_tag 'Logout' %>
+  <% end %>
+</div>
