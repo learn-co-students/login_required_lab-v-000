@@ -1,0 +1,5 @@
+<% if session[:name] %>
+  <%= render 'logout' %>
+<% else %>
+  <%= render 'login' %>
+<% end %>
