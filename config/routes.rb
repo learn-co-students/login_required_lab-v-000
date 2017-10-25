@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
 
   root 'sessions#new'
-  get '/login' => 'sessions#new'
+  get '/' => 'sessions#new'
+  post '/' => 'sessions#create'
+  delete '/' => 'sessions#destroy'
 
-  resources :sessions, :secrets
+  get '/secret' => 'secrets#show'
+
+
+
 
 
 

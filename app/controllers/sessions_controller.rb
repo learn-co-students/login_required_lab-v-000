@@ -1,7 +1,8 @@
 class SessionsController < ApplicationController
+  # before_action :require_login
 
   def new
-    if current_user != nil
+    if current_user.present?
       render :index
     else
       render :new
@@ -9,17 +10,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if params[:name].nil? || params[:name].empty?
-      redirect_to login_path
-    else
-      session[:name] = params[:name]
-      redirect_to sessions_path
-    end
+    session[:name] = params[:name]
+    redirect_to root_path
   end
 
   def destroy
     session.destroy
-    redirect_to login_path
+    redirect_to root_path
   end
+
 
 end
