@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :sessions, :secrets
+  root 'sessions#new'
   get '/login' => 'sessions#new'
+
+  resources :sessions, :secrets
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
