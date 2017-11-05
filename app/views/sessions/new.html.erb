@@ -1,0 +1,9 @@
+
+<h1>Login Page</h1>
+
+<%= form_tag('/sessions', method: 'post') do %>
+	<label for="name">Username:</label>
+	<input type="text" name="name">
+
+	<input type="submit" value="login">
+<% end %>
