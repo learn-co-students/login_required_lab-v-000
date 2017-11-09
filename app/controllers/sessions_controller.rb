@@ -4,11 +4,11 @@ class SessionsController < ApplicationController
   end
 
   def create
-    current_user = params[:name]
-    if !params[:name] || params[:name] = ""
-      redirect_to '/login'
+    if params[:name] && !params[:name].empty?
+      session[:name] = params[:name]
+      redirect_to '/secret'
     else
-      redirect_to '/secrets'
+      redirect_to '/login'
     end
   end
 
