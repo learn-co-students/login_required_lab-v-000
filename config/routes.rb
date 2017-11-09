@@ -1,17 +1,10 @@
 Rails.application.routes.draw do
-  # resources :secrets, only: [:show]
-  # get '/secret' => 'secrets#show'
-  #
+
+  get '/secrets', to: 'secrets#show'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  post '/logout', to: 'sessions#destroy'
   # resources :sessions
-
-  get 'secrets/new'
-
-  root 'application#hello'
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
-  post '/logout' => 'sessions#destroy'
-
-  get '/secret' => 'secrets#show'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
