@@ -1,0 +1,7 @@
+<h2>Hello <%= current_user %>, is it me you're looking for?</h2>
+
+<%= form_tag ({controller: 'sessions', action: 'destroy'}) do %>
+  <input type=submit value='logout'>
+<% end %>
+
+<%= link_to "secret", secret_path %>
