@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   def current_user
     session[:name]
+    ## calls name of user
+    #The session method is available anywhere in the Rails
+    #response cycle, and it behaves like a hash
   end
 
 #   before_action :require_login
