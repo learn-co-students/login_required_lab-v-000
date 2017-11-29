@@ -53,4 +53,12 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  root 'sessions#new'
+  get '/login' => 'sessions#new'
+  post '/login'=> 'sessions#create'
+  post '/logout' => 'sessions#destroy'#No route matches {:action=>"destroy", :controller=>"sessions"}
+  get '/secrets' => 'secrets#new'
+  post '/sessions' => 'sessions#create'
+  resource :secrets
+  resources :sessions
 end
