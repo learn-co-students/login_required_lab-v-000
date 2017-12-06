@@ -1,8 +1,5 @@
 class SessionsController < ApplicationController
   
-  # before_action :require_login
-  # skip_before_action :require_login, only: [:secret]
- 
   def new
   end
 
@@ -21,10 +18,4 @@ class SessionsController < ApplicationController
   end
 
  
-  # private
- 
-  # def require_login
-  #   return head(:forbidden) unless session.include? :user_id    
-  # end
-
 end
