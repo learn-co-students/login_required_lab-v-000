@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  get '/', to: 'sessions#index', as: 'index'
+  get '/login', to: 'sessions#new', as: 'login'
+  post '/login', to: 'sessions#create'
+  post '/logout', to: 'sessions#destroy'
+  get '/secret', to: 'secrets#show', as: 'secret'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
