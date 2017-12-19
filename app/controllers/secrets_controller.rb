@@ -7,4 +7,9 @@ class SecretsController < ActionController::Base
       render 'secret'
     end
   end
+
+  def secret
+    return head(:forbidden) unless session.include? :name
+
+  end
 end

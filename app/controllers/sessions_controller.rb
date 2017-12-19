@@ -8,14 +8,12 @@ class SessionsController < ActionController::Base
     if !params[:name] || (params[:name] && params[:name].empty?)
       redirect_to :root
     else
-
       session[:name] = params[:name]
       redirect_to '/welcome'
     end
   end
 
   def destroy
-    binding.pry
     if session[:name]
       session.delete :name
     end
