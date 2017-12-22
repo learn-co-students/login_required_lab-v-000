@@ -54,4 +54,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   get "/secrets/show", to: "secrets#show"
+  post "sessions/destroy"
+
+  resources :sessions, only: [:new, :create]
 end
