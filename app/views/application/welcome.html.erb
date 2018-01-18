@@ -1,0 +1,7 @@
+<h1>Hi, <%= current_user %></h1>
+
+<p><%= link_to "Secret Page", krabbypattysecretformula_path %></p>
+
+<%= form_tag '/logout' do %>
+  <%= submit_tag 'Logout' %>
+<% end %>
