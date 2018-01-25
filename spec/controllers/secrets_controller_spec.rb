@@ -11,6 +11,7 @@ RSpec.describe SecretsController do
       # note, in this test we're sending a get request to the secretscontroller with no params.
       # if your route expects a param of id you'll get this error No route matches {:action=>"show", :controller=>"secrets"}
       get :show, nil, {name: 'Maya Angelou'}
+# byebug
       assert_response 200
     end
   end
