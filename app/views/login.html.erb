@@ -1,0 +1,5 @@
+<p>
+  <%= form_tag "/sessions/new", method: 'POST' %>
+    <%= text_field_tag :name, 'Name:' %>
+    <%= submit_tag 'Create' %>
+</p>
