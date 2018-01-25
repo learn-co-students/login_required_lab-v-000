@@ -1,0 +1,4 @@
+<h1>Hello. Please log in: </h1>
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) %>
+  <%= text_field_tag :name %>
+  <%= submit_tag 'login' %>
