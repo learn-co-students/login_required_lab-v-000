@@ -1,0 +1,9 @@
+<%= form_tag 'sessions', method: :post, class: "navbar-form navbar-left search-form" do %>
+  <%= text_field_tag(
+      :name,
+      params[:name],
+      placeholder: "Username",
+      class: "form-control"
+  ) %>
+  <button type="submit" name="submit">Submit</button>
+<% end %>
