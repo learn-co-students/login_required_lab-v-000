@@ -1,0 +1,4 @@
+<h1>Welcome <%= @current_user %>.</h1>
+<h4>Click here to learn the <%= link_to "secret.", secrets_show_path %></h4>
+<br>
+<%= button_to "Log out", sessions_destroy_path, :method => "delete" %>
