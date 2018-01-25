@@ -1,0 +1,8 @@
+<h1>Home Page</h1>
+<p>Welcome, <%= current_user %>!</p>
+<%= form_tag controller: 'sessions', action: 'destroy', method: :post do %>
+  <%= submit_tag "Logout" %>
+<% end %>
+<br>
+
+<%= link_to "Click here for a secret", secrets_show_path %>
