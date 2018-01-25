@@ -1,0 +1,7 @@
+<h1>Hello <%= session[:name] %></h1>
+
+<p><%= link_to "Psst, wanna see a secret?", '/secret' %></p>
+
+<%= form_tag('/sessions/destroy') do %>
+  <%= submit_tag "Log Out" %>
+<% end %>
