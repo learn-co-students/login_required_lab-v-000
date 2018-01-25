@@ -1,0 +1,7 @@
+<p> Welcome back, friend. </p>
+
+<%= link_to "the secret", "/secret" %>
+
+<%= form_tag ({controller: "sessions", action: "destroy", method: "delete"}) do %>
+  <input type="submit" value="logout">
+<% end %>
