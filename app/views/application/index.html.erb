@@ -1,0 +1,8 @@
+<h1>Hello <%= @user %></h1>
+<h2><%= link_to "Secret Link", secret_path %></h2>
+
+<p>
+<%= form_tag("/logout", method: "post") do %>
+  <%= submit_tag("Logout") %>
+<% end %>
+</p>
