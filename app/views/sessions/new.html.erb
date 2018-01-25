@@ -1,0 +1,17 @@
+<h1>Log In</h1>
+
+<%= form_tag ({controller: 'sessions', action: 'create'}) do %>
+  <%= label_tag :name, "Username:" %>
+  <%= text_field_tag :name %><br><br>
+  <%= submit_tag "login" %>
+<% end %>
+
+<!-- Rails helper form_tag generates the HTML <form> below:
+
+<form action="/login" accept-charset="UTF-8" method="post">
+  <input name="utf8" type="hidden" value="✓">
+  <input type="hidden" name="authenticity_token" value="long string here==">
+  <label for="name">Username:</label>
+  <input type="text" name="name" id="name"><br><br>
+  <input type="submit" name="commit" value="login">
+</form>
