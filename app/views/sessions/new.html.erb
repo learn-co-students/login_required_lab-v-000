@@ -1,0 +1,5 @@
+<%#= flash[:alert] %>
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+  <%= text_field_tag :name %>
+  <%= submit_tag :login %>
+<% end %>
