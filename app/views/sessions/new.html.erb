@@ -1,0 +1,5 @@
+Login:<br>
+<%= form_tag("/sessions", method: "create") do %>
+	<%= text_field_tag(:name) %>
+	<%= submit_tag("Login") %>
+<% end %>
