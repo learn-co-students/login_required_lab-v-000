@@ -1,0 +1,7 @@
+<h1>Hello, <%= @user %></h1>
+
+<%= link_to "Cool Stuff",secret_path %>
+
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+  <input type=submit value='logout'>
+<% end %>
