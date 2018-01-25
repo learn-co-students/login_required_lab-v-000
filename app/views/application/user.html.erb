@@ -1,0 +1,8 @@
+<h1>Welcome <%= @user %></h1>
+<p><iframe src="//giphy.com/embed/wDGCA2dv9VJxC" width="480" height="235" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+</p>
+
+<%= link_to "Secret Page", show_path %>
+<%= form_tag("/logout", method: :post) do %>
+  <input type="submit" value='logout'>
+<% end %>
