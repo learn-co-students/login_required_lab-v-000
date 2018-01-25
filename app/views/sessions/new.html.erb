@@ -1,0 +1,6 @@
+<h2>Welcome, <%= @current_user %>!</h2>
+
+<p><%= link_to secret_path, 'CLICK FOR SECRET', :class => 'button alt', :id => @current_user  %></p>
+
+<%= link_to 'Logout', { :controller => 'sessions', :action => 'destroy', :id => @current_user },
+data: { :confirm => 'Are you sure?', :method => :delete } %>
