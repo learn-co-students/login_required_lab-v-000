@@ -4,15 +4,18 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def current_user
-    if session[:name]
-      session[:name]
-    else
-      nil
-    end
+    #can be called by viewers
+    session[:name]
   end
 
   def welcome
-    redirect_to login_path unless session[:name]
+    redirect_to login_path unless current_user
+  end
+
+  private
+ # can only be called within ApplicationController
+  def logged_in?
+   redirect_to login_path unless current_user
   end
 
 end
