@@ -1,0 +1,9 @@
+<h1>Hi, <%= current_user %>.</h1>
+
+<a href ="/secrets"> Secrets </a>
+
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+  <input type=submit value='logout'>
+<% end %>
+
+<a href ="/secrets"> Secrets </a>
