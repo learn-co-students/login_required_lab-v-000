@@ -8,6 +8,6 @@ class SecretsController < ApplicationController
   private
 
   def require_login
-    redirect_to login_path unless !!current_user
+    return head(:forbidden) unless !!current_user
   end
 end
