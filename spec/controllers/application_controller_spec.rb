@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+require 'pry'
 RSpec.describe ApplicationController do
   describe 'current_user' do
     it 'returns the name of the current user' do
