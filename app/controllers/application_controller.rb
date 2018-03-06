@@ -13,9 +13,8 @@ class ApplicationController < ActionController::Base
 
 	private
 	def require_login
-		return head(:forbidden) unless session.include?
-	end 
-		
+    redirect_to controller: 'sessions', action: 'new' unless current_user
+  end
 end
 
 

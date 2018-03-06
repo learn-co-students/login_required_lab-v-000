@@ -1,16 +1,9 @@
 page 2
 
-"Hi, #{:current_user}"
+<h1>Hi, <%= session[:name].titlecase %>.</h1>
 
-Here's the link to your secret  username
-
-
-<h1>Hi, <%= session[:current_user] %>.</h1>
-
-<%= form_tag ({controller: 'secrete', action: 'show', method: 'get'}) do %>
-
- <h3> Today is Monday! </h3>
+<%= form_tag ({controller: 'secrets', action: 'show', method: 'get'}) do %>
 
 <% end %>
-
+<%= link_to "Secret",  secret_path %><br />
 <%= link_to 'Logout',  logout_path %>
