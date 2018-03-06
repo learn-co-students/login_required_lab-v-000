@@ -1,0 +1,9 @@
+
+1. welcome page 
+
+<h1>Login</h1>
+<%= form_tag(controller: 'sessions', action: 'create', method: 'POST') do %>
+	<%= label_tag("enter your name") %>
+	<%= text_field_tag(:current_user) %>
+	<%= submit_tag("Login") %>
+<% end %>
