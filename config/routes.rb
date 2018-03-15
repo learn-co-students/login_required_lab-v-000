@@ -53,4 +53,9 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  get '/' => 'application#index', as: 'home'
+  get '/secrets' => 'secrets#show', as: 'secret'
+  get '/login' => 'sessions#new', as: 'login'
+  post '/login' => 'sessions#create', as: 'new_login'
+  get '/logout' => 'sessions#destroy', as: 'logout'
 end
