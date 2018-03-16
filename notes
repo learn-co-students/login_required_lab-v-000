@@ -2,3 +2,49 @@ need 3 pages
     login page, username. when logged in taken to
     user homepage, that says hi user, and has a link to a secret page
     page with secret
+
+
+
+        class ApplicationController < ActionController::Base
+          # Prevent CSRF attacks by raising an exception.
+          # For APIs, you may want to use :null_session instead.
+          protect_from_forgery with: :exception
+
+          def hello
+            redirect_to controller: 'sessions', action: 'new' unless session[:name]
+          end
+
+          def current_user
+            session[:name]
+          end
+
+          private
+
+          def require_logged_in
+            redirect_to controller: 'sessions', action: 'new' unless current_user
+          end
+        end
+
+
+        class SessionsController < ApplicationController
+          def new
+          end
+
+          def create
+            return redirect_to(controller: 'sessions',
+                               action: 'new') if !params[:name] || params[:name].empty?
+            session[:name] = params[:name]
+            redirect_to controller: 'application', action: 'hello'
+          end
+
+          def destroy
+            session.delete :name
+            redirect_to controller: 'application', action: 'hello'
+          end
+        end
+        class SecretsController < ApplicationController
+          before_action :require_logged_in
+
+          def show
+          end
+        end
