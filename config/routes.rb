@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+
+  root 'application#hello'
+  #root directory sends route request '\' to ApplicationController hello method. Need to make hello action
+
+  #make sure SessionsController has  new create and destroy actiosn
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  post '/logout' => 'sessions#destroy'
+
+#labs call for a show url that directs to the secrets controller's show action
+  get 'secrets/show' => 'secrets#show'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
