@@ -7,9 +7,7 @@ class SessionsController < ApplicationController
 # SessionsController create sets session[:name] if :name was given
   def create
     redirect_to login_path unless session.include? :name
-
-
-    
+      session[:name] = params[:name]
   end
 
 # SessionsController destroy leaves session[:name] nil if it was not set
