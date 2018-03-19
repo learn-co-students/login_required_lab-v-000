@@ -8,8 +8,6 @@ class ApplicationController < ActionController::Base
 #ApplicationController current_user returns the name of the current user
 # ApplicationController current_user returns nil if nobody is logged in
     session[:name] ||= nil
-
-
   end
 
   def hello
