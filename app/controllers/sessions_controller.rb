@@ -6,7 +6,10 @@ class SessionsController < ApplicationController
 # SessionsController create redirects to login page if :name is empty
 # SessionsController create sets session[:name] if :name was given
   def create
+    redirect_to login_path unless session.include? :name
 
+
+    
   end
 
 # SessionsController destroy leaves session[:name] nil if it was not set
