@@ -1,0 +1,9 @@
+page 2
+
+<h1>Hi, <%= session[:name].titlecase %>.</h1>
+
+<%= form_tag ({controller: 'secrets', action: 'show', method: 'get'}) do %>
+
+<% end %>
+<%= link_to "Secret",  secret_path %><br />
+<%= link_to 'Logout',  logout_path %>
