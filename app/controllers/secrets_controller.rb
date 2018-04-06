@@ -8,6 +8,6 @@ class SecretsController < ApplicationController
   private
 
   def require_login
-    redirect_to '/login' if current_user == nil || current_user != session[:name]
+    redirect_to '/login' unless current_user
   end
 end
