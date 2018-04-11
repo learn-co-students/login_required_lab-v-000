@@ -1,0 +1,5 @@
+<%= content_tag(:h2, "Welcome, #{current_user}") %>
+<%= link_to "Secrets", yoursecrets_path %>
+<%= form_tag("/logout", method: "post") do %>
+	<%= submit_tag("Log Out") %>
+<% end %>
