@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
   skip_before_action :redirect_if_not_logged_in, only: [:new, :create]
 
   def new
-
   end
 
   def create
@@ -15,9 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    if session.include? :name
-      session.delete(:name)
-    end
+    session.delete(:name)
     redirect_to login_path
   end
 end
