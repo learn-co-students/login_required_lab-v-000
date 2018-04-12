@@ -1,0 +1,13 @@
+<% if session[:name] %>
+  <h1>Hi, <%= session[:name] %>.</h1>
+  <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+    <input type=submit value='Logout'>
+    <% end %>
+<% else %>
+  <h1>Welcome, please login. </h1>
+  <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+  <label>Name:</label>
+  <input type="text" id="name" name="name"><br>
+    <input type=submit value='Login'>
+  <% end %>
+<% end %>

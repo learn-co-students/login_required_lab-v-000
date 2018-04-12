@@ -1,0 +1,7 @@
+<h1>Hi, <%= session[:name] %>.</h1>
+<body>
+  <p> Visit your <%= link_to "Secret Page", controller: "secrets", action: "show", id: session[:name] %> or logout. </p>
+</body>
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+  <input type=submit value='logout'>
+<% end %>
