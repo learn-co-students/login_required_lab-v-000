@@ -8,8 +8,8 @@ class SessionsController < ApplicationController
      else
     session[:name] = params[:name]
     redirect_to "/application/index"
-  end
-end
+     end
+   end
   
   def destroy
     if session[:name] != nil
