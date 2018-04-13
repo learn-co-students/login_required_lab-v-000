@@ -1,5 +1,7 @@
 require 'rails_helper'
+RSpec.describe "secrets/show.html.erb", type: :view do
 
-RSpec.describe "secrets/new.html.erb", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+  it "renders the secret" do
+     render :template => "secrets/show.html.erb"
+  end
+  end
