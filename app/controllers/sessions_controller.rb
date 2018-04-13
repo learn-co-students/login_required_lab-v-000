@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     if current_user.blank?
     redirect_to '/sessions/new'
     elsif current_user
-      redirect_to "/"
+      redirect_to "/application/index"
     end
   end
   

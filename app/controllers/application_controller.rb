@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     
     private
     def require_login
-        redirect_to controller: 'sessions', action: 'new' unless session.include? session[:name]
+        redirect_to controller: 'sessions', action: 'new' unless session[:name]
     end
 
 end
