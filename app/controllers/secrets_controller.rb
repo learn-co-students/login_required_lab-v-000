@@ -7,4 +7,11 @@ class SecretsController < ApplicationController
     # elsif session[:name]
     end
     # end
+      
+      
+    
+    private
+    def require_login
+        redirect_to controller: 'sessions', action: 'new' unless session[:name]
+    end
 end

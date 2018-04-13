@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   get 'sessions/new'
    root 'sessions#new'
     
+    
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
-
-  get 'application/index' => 'application#index'
+get 'application/index' => 'application#index'
+ 
     get '/secret' => 'secrets#show'
 
  
