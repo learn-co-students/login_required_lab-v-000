@@ -1,0 +1,93 @@
+
+Our app has three pages:
+
+A login page, where the user enters their username. No passwords; we'll just trust them. After they're logged in, users are taken to...
+
+A user homepage, which says, "Hi, #{username}", and has a link to the secret page, which is...
+
+A page with a secret on it, which users must be logged in to see.
+
+INSTRUCTIONS
+Build out the SessionsController.
+
+Write a current_user method.
+
+Write a SecretsController using a before_action to prevent any route from being accessed without logging in.
+
+Use the specs as your guide, but we'd like the following behavior. We should be able to:
+
+Visit the root of the app and be redirected to a login page. --> this is going to need a route:  root ???  is this going to point to ApplicationController#login, or what?
+
+
+
+
+If a user fails to enter their name on the login page, they should be redirected there until they successfully do so.
+
+
+Once logged in, a user should see the welcome page. This page should greet the user and link them to the secret page.
+The content and URL of the secret page are up to you. However, if we visit that URL without logging in, we should be redirected to the login page. Under no circumstances should we allow people who are not logged in to see the secrets.
+
+
+
+ApplicationController
+  current_user
+    returns the name of the current user
+    returns nil if nobody is logged in
+
+SecretsController
+  get show
+    should redirect to login if you're not logged in (FAILED - 1)
+    should show you the secret if you're logged in (FAILED - 2)
+
+SessionsController
+  create
+    redirects to login page if :name is nil (FAILED - 3)
+    redirects to login page if :name is empty (FAILED - 4)
+    sets session[:name] if :name was given (FAILED - 5)
+  destroy
+    leaves session[:name] nil if it was not set (FAILED - 6)
+    clears session[:name] if it was set (FAILED - 7)
+
+Failures:
+
+  1) SecretsController get show should redirect to login if you're not logged in
+     Failure/Error: get :show
+
+     ActionController::UrlGenerationError:
+       No route matches {:action=>"show", :controller=>"secrets"}
+
+  2) SecretsController get show should show you the secret if you're logged in
+     Failure/Error: get :show, nil, {name: 'Maya Angelou'}
+
+     ActionController::UrlGenerationError:
+       No route matches {:action=>"show", :controller=>"secrets"}
+
+  3) SessionsController create redirects to login page if :name is nil
+     Failure/Error: post :create
+
+     ActionController::UrlGenerationError:
+       No route matches {:action=>"create", :controller=>"sessions"}
+
+  4) SessionsController create redirects to login page if :name is empty
+     Failure/Error: post :create, name: ''
+
+     ActionController::UrlGenerationError:
+       No route matches {:action=>"create", :controller=>"sessions", :name=>""}
+
+  5) SessionsController create sets session[:name] if :name was given
+     Failure/Error: post :create, name: me
+
+     ActionController::UrlGenerationError:
+       No route matches {:action=>"create", :controller=>"sessions", :name=>"Werner Brandes"}
+
+  6) SessionsController destroy leaves session[:name] nil if it was not set
+     Failure/Error: post :destroy
+
+     ActionController::UrlGenerationError:
+       No route matches {:action=>"destroy", :controller=>"sessions"}
+
+  7) SessionsController destroy clears session[:name] if it was set
+     Failure/Error: post :create, name: 'Trinity'
+
+     ActionController::UrlGenerationError:
+       No route matches {:action=>"create", :controller=>"sessions", :name=>"Trinity"}
