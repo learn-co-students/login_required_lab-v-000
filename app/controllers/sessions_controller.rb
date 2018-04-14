@@ -1,13 +1,26 @@
 class SessionsController < ApplicationController
-  before_action :require_login
-  helper_method :current_user
+
+  def hello
+  end
+
+  def show
+    @user = session[:name]
+  end
+
+  def new
+  end
 
   def create
     if !params[:name] || params[:name] == ""
-      redirect_to '/'
+      redirect_to login_path
     else
       session[:name] = params[:name]
-      redirect_to welcome_path
+      redirect_to '/secret'
     end
+  end
+
+  def destroy
+    session.delete :name if session[:name]
+    redirect_to root_path
   end
 end
