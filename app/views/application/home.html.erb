@@ -1,8 +1,8 @@
-<h1>Welcome</h1>
+<h1>Welcome <%= session[:name] %></h1>
 
   <% if logged_in? %>
     <%= render partial: 'layouts/logout' %>
-    <%= link_to 'See Secret', show_path %>
+    <%= link_to 'See Secret', secrets_path %>
 
     <% else %>
     <%= link_to 'login', login_path %>

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   post '/logout', to: 'sessions#destroy'
 
-  get '/show', to: 'secrets#show'
+  get '/secrets', to: 'secrets#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
