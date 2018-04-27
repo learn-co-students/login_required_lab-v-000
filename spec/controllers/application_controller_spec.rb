@@ -12,4 +12,6 @@ RSpec.describe ApplicationController do
       expect(subject.current_user).to be nil
     end
   end
+
+
 end
