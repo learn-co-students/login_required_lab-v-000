@@ -10,9 +10,7 @@ class ApplicationController < ActionController::Base
   private 
 
   	def require_login 
-  		if !session.include? :name   
-  			redirect_to '/'
-  		end  
+  		redirect_to '/' unless current_user
   	end 
 
 end
