@@ -1,0 +1,12 @@
+<% if session[:name] %>
+    Already logged in.
+    <br></br>
+    <%= link_to "Return to home page.", '/' %>
+<% else %>
+    <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+        <%= label_tag "Name" %>
+        <%= text_field_tag :name %>
+        <br>
+        <%= submit_tag "Log In" %>
+    <% end %>
+<% end %>
