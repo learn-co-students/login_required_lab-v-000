@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-	# before_action :require_login
+	
 
 	def new
 	end
@@ -13,11 +13,5 @@ class SessionsController < ApplicationController
 	def destroy
 		session.delete :name
 		redirect_to controller: 'application', action: 'hello'
-	# private
-
-	# def require_login
-	# 	returen head(:forbidden) unless session.include? :user_id
-	# end
-
-end
+	end
 end
