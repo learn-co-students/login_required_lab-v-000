@@ -5,12 +5,16 @@ class SessionsController < ApplicationController
       redirect_to '/login'
     else
       session[:name] = params[:name]
+      redirect_to '/index'
     end
   end
 
   def destroy
     if session[:name]
-      sesssion.delete :name
+      session.delete :name
+      redirect_to '/login'
+    else
+      redirect_to '/login'
     end
   end
 end
