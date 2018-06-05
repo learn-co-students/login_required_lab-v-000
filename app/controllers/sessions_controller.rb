@@ -6,7 +6,8 @@ class SessionsController < ApplicationController
   def create
     #redirects to login page if current_user is nil
     #login page here is the same as a new session
-    if current_user.nil?
+    #binding.pry
+    if params[:name].nil? || params[:name].empty?
       redirect_to login_path
     else
       session[:name] = params[:name]
@@ -14,5 +15,7 @@ class SessionsController < ApplicationController
     end
   end
 
+  def index
+  end
 
 end
