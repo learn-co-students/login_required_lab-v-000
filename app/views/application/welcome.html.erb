@@ -1,0 +1,5 @@
+This page will show if the user is logged in, it will also link to their secret message
+
+<h1>Hi, <%=session[:name]%></h1>
+<p><%=link_to "Secret Message", controller: "secrets", action: "show" %></p>
+<p><%=link_to "Logout", controller: "sessions", action: "destroy" %></p>
