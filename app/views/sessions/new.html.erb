@@ -1,0 +1,6 @@
+<h2>Hello, please login below: </h2>
+<%=form_tag("/login", method: "post") do %>
+	<label>Username: </label>
+	<%=text_field_tag :name %>
+	<%=submit_tag "Submit" %>
+<%end%>
