@@ -1,0 +1,8 @@
+<%= flash_error %>
+
+<h1>Welcome! Please enter your name below:</h1>
+
+<%= form_tag login_path do %>
+  <%= text_field_tag "name" %>
+  <%= submit_tag "login" %>
+<% end %>
