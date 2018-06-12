@@ -1,0 +1,7 @@
+<h1>Welcome, <%= @current_user %>!</h1>
+<%=link_to "Check out the secrets!", secret_path %>
+<%= form_tag login_path, method: :delete do %>
+  <input type="submit" value="Log Out">
+<% end %>
+<!-- couldve done form like:
+<%= form_tag({controller: 'sessions', action: 'destroy', method: 'post'}) do %> -->
