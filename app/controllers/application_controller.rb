@@ -5,13 +5,17 @@ class ApplicationController < ActionController::Base
   before_action :is_logged_in
   skip_before_action :is_logged_in, only: [:new, :create, :index]
 
+  def hello
+    
+  end
+
   def current_user
      session[:name]
   end
   
 
   private
-  
+
   def is_logged_in
      redirect_to controller: 'sessions', action: 'new'  unless current_user
   end
