@@ -1,10 +1,11 @@
 class SecretsController < ApplicationController
   
-  def new
-  end
+
+  # def new
+  # end
 
   def show
-    binding.pry
+    is_logged_in
   end
 
 
