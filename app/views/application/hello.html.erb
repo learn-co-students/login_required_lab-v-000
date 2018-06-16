@@ -1,7 +1,9 @@
 <h1>Hi, <%= session[:name] %>.</h1>
+<%# This makes sense because the only instance we have is in the sessions hash %>
+
 <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
   <input type=submit value='logout'>
 <% end %>
+<br>
 
-
-<%# <%= link_to "secrets/show", secret_path %> %>
+<%= link_to "A secret for you", secrets_path %>
