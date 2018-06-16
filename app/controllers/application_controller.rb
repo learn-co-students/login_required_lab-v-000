@@ -2,24 +2,30 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  before_action :require_login
 
-  def require_login
-    return head(:forbidden) unless session.include? :user_id
+
+  # def require_login
+  #   if !current_user
+  #     return head(:forbidden)
+  #   else
+  #     redirect_to controller: "sessions", action: "new"
+  #   end
+  # end
+
+  #??? Why don't we need a helper method ... because controller and views are automatically
+  # connected in rails? Then what's helper_method for? API guide shows that as the purpose of helper_method
+  
+  def hello
+    redirect_to controller: 'sessions', action: 'new' unless session[:name] #TRY current_user
   end
   
-  # helper_method :current_user
+  def current_user
+    session[:name]
+  end
 
-  # def current_user
-  #   session[:username] = params[:username]
-  #   if session[:username] == params[:username]
-  #     redirect_to session
-  #   else 
-  #     redirect_to '/login' 
-  #   end 
-  # end
+  private
 
-  # def hello
-  #   puts "Hi, #{:username}"
-  # end
+  def require_logged_in
+    redirect_to controller: 'sessions', action: 'new' unless current_user
+  end
 end

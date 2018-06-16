@@ -1,6 +1,7 @@
 class SecretsController < ApplicationController
-#   make to prevent any route from being accessed without being logged in 
-    #       redirect_to login page
-    def index
+    before_action :require_logged_in
+
+    #This lab persisted no data for users, so any new user is always logged in
+    def show
     end
 end
