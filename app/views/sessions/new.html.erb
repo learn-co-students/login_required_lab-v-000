@@ -1,0 +1,14 @@
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+  <label>Enter your name: </label>
+  <input name=name>
+  <input type=submit value='login'>
+<% end %>
+
+<%# form_tag(url_for_options = {}, options = {}, &block) public %>
+<%# API Docs ... if just a url/url/1 is passed, it assumes action ... here I think we put them all out as options
+in a hash because we are referring to a specific controller ... instead of using a model in the app?  %>
+
+
+<%# ??? Why aren't there any other attributes in the form_tag block (i.e., type, value, id)
+Does this show a label "name" with the need to make a label? %>
+
