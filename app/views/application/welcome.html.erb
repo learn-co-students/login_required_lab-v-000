@@ -1,0 +1,7 @@
+<h1>Welcome, <%= @user %></h1>
+
+<h3><%= link_to "Psst... click me", secret_path %></h3>
+
+<%= form_tag '/logout', method="POST" %>
+  <%= submit_tag "logout" %>
+<% end %>
