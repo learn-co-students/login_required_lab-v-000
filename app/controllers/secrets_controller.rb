@@ -1,14 +1,14 @@
 class SecretsController < ApplicationController
 before_action :require_login
 
-def show
-  @secret = "This is the secret"
-end
+  def show
+    @secret = "This is the secret"
+  end
 
 
-private
+  private
 
-def require_login
-  redirect_to '/login' unless session.include? :name
-end
+  def require_login
+    redirect_to '/login' unless session.include? :name
+  end
 end
