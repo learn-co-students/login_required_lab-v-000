@@ -1,12 +1,8 @@
 class SecretsController < ApplicationController
-  before_action  :login
+  before_action  :require_logged_in
 
   def show
-
   end
 
-  def login
-    redirect_to new_session_path if current_user.nil?
-  end
 
 end

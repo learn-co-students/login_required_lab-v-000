@@ -2,18 +2,18 @@ class SessionsController < ApplicationController
   def new
   end
 
- def create
-  if params[:name].blank?
-    redirect_to new_session_path
-  else
-    session[:name] = params[:name]
-    redirect_to secret_path
-    end
+  def create
+    if !params[:name] || params[:name].empty?
+     redirect_to(controller: 'sessions', action: 'new')
+    else
+     session[:name] = params[:name]
+     redirect_to controller: 'application', action: 'hello'
+   end 
   end
 
   def destroy
     session.delete :name
-    redirect_to new_session_path
+    redirect_to controller: 'application', action: 'hello'
   end
 
 end
