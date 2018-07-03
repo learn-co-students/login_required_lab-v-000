@@ -2,3 +2,7 @@
 <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
   <input type=submit value='logout'>
 <% end %>
+<% if session[:name] %>
+	<h3>Secret Page and shit</h3>
+	<%= link_to "Wanna know a secret?", show_path %>
+<% end %>
