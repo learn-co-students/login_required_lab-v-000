@@ -1,0 +1,7 @@
+<h3>Hello, <%= current_user %>!</h3>
+
+<p>Take a look at your <%= link_to "secret", secret_path %>!</p>
+
+<%= form_tag "/logout" do %>
+    <%= submit_tag "Logout" %>
+<% end %>
