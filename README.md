@@ -1,5 +1,11 @@
 # Login Required Lab
 
+        root GET  /                       sessions#new
+secrets_show GET  /secrets/show(.:format) secrets#show
+      login GET  /login(.:format)        sessions#new
+            POST /login(.:format)        sessions#create
+     logout POST /logout(.:format)       sessions#destroy
+
 ## Objectives
 
 We're going to make a Rails app that requires you to be logged in to see one of its pages.
