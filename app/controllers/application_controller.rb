@@ -8,4 +8,12 @@ class ApplicationController < ActionController::Base
       session[:name]
     end
   end
+
+  def hello
+    if session[:name]
+      render :hello
+    else
+      redirect_to login_path
+    end
+  end
 end
