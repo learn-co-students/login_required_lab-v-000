@@ -1,9 +1,9 @@
 class SecretsController < ApplicationController
   before_action :require_login
-  skip_before_action :require_login, only: [:index]
+  skip_before_action :require_login, only: [:index] #skip the require_login filter only on the index action
 
   def show
-    render:index
+    render:show
   end
 
   def index
