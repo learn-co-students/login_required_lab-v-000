@@ -18,12 +18,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    if !session.include? :name
-      session[:name] = nil
-    else
       session.delete :name
       session[:name] = nil
-    end
-    redirect_to new_session_path
+      redirect_to new_session_path
   end
 end
