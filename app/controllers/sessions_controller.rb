@@ -4,24 +4,33 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if current_user.nil?
-
-      render 'new'
-    else
-      current_user
-      binding.pry
+    # if login name provided (not empty) and name is not " "
+    # set session to the provided name
+    if !params[:name].blank? && !params[:name].nil?
+      session[:name] = params[:name]
 
       redirect_to '/welcome'
+    else
+
+      redirect_to '/'
     end
   end
 
-  private
+  def destroy
+    if session[:name]
+      session.delete :name
 
-  def current_user
-    session[:name] = params[:name]
+      render 'new'
+    else
+      nil
+
+      render 'new'
+    end
   end
 
-  def session_params
-    params.require(:session).permit(:name)
-  end
+  # private
+  #
+  # def session_params
+  #   params.require(:session).permit(:name)
+  # end
 end
