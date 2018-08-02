@@ -8,8 +8,9 @@ class SessionsController < ApplicationController
     # set session to the provided name
     if !params[:name].blank? && !params[:name].nil?
       session[:name] = params[:name]
+      @user = session[:name]
 
-      redirect_to '/welcome'
+      render 'welcome'
     else
 
       redirect_to '/'
