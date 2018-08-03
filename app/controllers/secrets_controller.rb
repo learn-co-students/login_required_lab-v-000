@@ -1,4 +1,7 @@
 class SecretsController < ApplicationController
-  def new
+  before_action :logged_in?
+
+  def show 
   end
+  
 end
