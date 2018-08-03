@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   
   
   def logged_in?
-    !session[:name].nil?
+    redirect_to root_path unless session.include? :name
   end
   
   def current_user 
