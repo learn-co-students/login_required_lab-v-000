@@ -1,3 +1,5 @@
 <h1>Welcome <%= current_user %></h1>
 
-<%=  button_to "Logout", { :action => "destroy"} %>
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+  <input type=submit value='logout'>
+<% end %>
