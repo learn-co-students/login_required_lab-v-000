@@ -1,15 +1,8 @@
 Rails.application.routes.draw do
  
-  get 'sessions/new'
-
-  get 'sessions/show'
-
-  get 'sessions/destroy'
-  
-  post 'sessions', to: 'sessions#create'
-
-  get 'secrets/show'
-  
   root 'sessions#new'
+  
+  resource :secrets, only: [:show] 
+  resource :sessions, only: [:new, :create, :show, :destroy]
 
 end
