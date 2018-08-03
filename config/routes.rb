@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get '/login' => 'sessions#new'
+  get '/secrets' => 'secrets#index'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
   root 'application#welcome'
