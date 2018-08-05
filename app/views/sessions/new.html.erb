@@ -1,0 +1,8 @@
+<h1>New User Page</h1>
+
+<%= form_tag('/login', method: :post) do %>
+    <h3><%= label_tag 'User: ' %>
+    <%= text_field_tag :user %></h3>
+
+    <%= submit_tag 'Login' %>
+<% end %>
