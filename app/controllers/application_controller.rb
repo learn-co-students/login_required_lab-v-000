@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
   
   def home 
-     session[:name] = current_user
+     redirect_to '/login'
   end
   
   def current_user
