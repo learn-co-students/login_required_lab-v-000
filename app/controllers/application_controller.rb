@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
   
   def current_user
-    session[:name] ||= nil
+    session[:name]
   end
   
   
