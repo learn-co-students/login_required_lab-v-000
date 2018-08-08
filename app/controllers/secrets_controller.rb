@@ -5,15 +5,15 @@ class SecretsController < ApplicationController
     render '/show'
   end
 
+  def home
+    render '/home'
+  end
+
 
   private
 
   def require_login
-    if current_user.nil?
-      redirect_to '/login'
-    else
-      render '/show'
-    end
+    redirect_to '/' if current_user.nil?
   end
 
 
