@@ -1,0 +1,7 @@
+<form action="/login" method="post">
+  <label for="name">Username:</label>
+  <input type="text" name="name">
+
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="submit" name="submit" value="login">
+</form>
