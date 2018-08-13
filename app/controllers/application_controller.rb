@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def current_user 
-    session[:name]
+    @username ||= session[:name]
   end  
 end
