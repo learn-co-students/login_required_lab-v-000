@@ -16,4 +16,7 @@ end
   redirect_to '/login'
 end
 
+def new
+end
+
 end
