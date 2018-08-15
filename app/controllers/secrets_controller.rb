@@ -10,6 +10,6 @@ end
   private
 
   def require_login
-    redirect_to '/login' unless session.include? :user_id
+    redirect_to '/login' unless session.include? :name
   end
 end
