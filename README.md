@@ -14,6 +14,7 @@ Our app has three pages:
 ## Instructions
 
 1. Build out the `SessionsController`.
+rails generate controller Sessions new --no-helper --no-assets --no-controller-specs
 
 2. Write a `current_user` method.
 
