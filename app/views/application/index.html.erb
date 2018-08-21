@@ -1,0 +1,7 @@
+<h1>Hello, <%= session[:name]%></h1>
+<h3>Link to<a href="/secrets"> a secret</a></h3>
+<h3>Or,
+  <form action="/logout" method="post">
+    <input type="submit" name="logout" value="Log Out">
+  </form>
+</h3>
