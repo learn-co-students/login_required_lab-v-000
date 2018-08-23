@@ -2,17 +2,13 @@ class SecretsController < ApplicationController
   before_action :require_login
 
   def show
-    if logged_in?
-      render :show
-    else
-      redirect_to login_path
-    end
+    render :show
   end
 
   private
 
   def require_login
-    return head(:forbidden) unless session.include? :name
+    redirect_to controller: 'sessions', action: 'new' unless logged_in?
   end
 
 end

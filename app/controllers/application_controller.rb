@@ -5,8 +5,7 @@ class ApplicationController < ActionController::Base
 
   def current_user
     if logged_in?
-      @user = User.find_by(name: session[:name])
-      @user.name
+      session[:name]
     else
       nil
     end
