@@ -1,13 +1,14 @@
 class SessionsController < ApplicationController
+
   before_action :require_login
-  skip_before_action :require_login, only: [:new, :create]
+  skip_before_action :require_login, only: [:new, :create, :destroy]
 
   def new
   end
 
   def create
     if params[:name] && !params[:name].blank?
-      session[:name]=params[:name]
+      session[:name] = params[:name]
       redirect_to '/home'
     else
       redirect_to '/login'
@@ -19,9 +20,6 @@ class SessionsController < ApplicationController
       session.delete :name
     end
     redirect_to '/login'
-  end
-
-  def secret
   end
 
 
