@@ -1,9 +1,5 @@
 class SessionsController < ApplicationController
 
-  def show
-    require_login
-  end
-
   def new
   end
 
@@ -18,16 +14,11 @@ class SessionsController < ApplicationController
 
   def destroy
     if !current_user.nil?
-      session[:name] = nil
+      session.delete :name
       redirect_to '/login'
     else
       redirect_to '/'
     end
   end
 
-  private
-
-  def require_login
-    redirect_to '/login' unless session.include? :name
-  end
 end
