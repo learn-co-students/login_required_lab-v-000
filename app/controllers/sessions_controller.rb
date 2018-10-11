@@ -1,16 +1,23 @@
 class SessionsController < ApplicationController
+  helper_method :current_user
+
   def new
   end
 
   def create
-    if current_user == nil ||current_user.empty?
-      redirect_to '/sessions/new'
+
+    if params[:name] && !params[:name].empty?
+        session[:name] = params[:name]
+        redirect_to '/'
     else
-      current_user
+      redirect_to '/sessions/new'
     end
   end
 
   def destroy
-
+    render 'secrets/show'
+    if session[:name] != nil
+      session.destroy
+    end
   end
 end
