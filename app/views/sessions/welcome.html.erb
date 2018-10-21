@@ -1,0 +1,11 @@
+Welcome <%=session[:name]%>
+<br>
+
+<%=link_to "Top Secret", secrets_top_secret_path%>
+<br>
+
+
+<%=form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+<input type= 'hidden'>
+<input type= 'submit' value= 'logout'>
+<%end%>
