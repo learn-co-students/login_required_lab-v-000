@@ -1,0 +1,7 @@
+<h1>Welcome to The Innkeeper:</h1>
+
+<%= form_tag ('/login') do %>
+<h3><%= label_tag "Enter Your Name:" %></h3>
+<%= text_field_tag "name" %>
+<%= submit_tag "Log In" %>
+<% end %>
