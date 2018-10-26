@@ -12,7 +12,12 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+     resources :sessions
+     resources :secrets
+
+     post '/logout' => 'sessions#destroy'
+
+     get '/show' => 'secrets#show'
 
   # Example resource route with options:
   #   resources :products do
