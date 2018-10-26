@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
      post '/logout' => 'sessions#destroy'
 
+     get '/show' => 'secrets#show'
+
   # Example resource route with options:
   #   resources :products do
   #     member do
