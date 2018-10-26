@@ -21,6 +21,11 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    #binding.pry
+    if session[:name]
+      session.delete :name
+    end
+    redirect_to new_session_path
   end
 
 
