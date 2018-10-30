@@ -3,10 +3,15 @@ class SessionsController < ApplicationController
 
 
   def create
-    # if name is nil || if name.strip == ""
-    #   redirect to login page
-    # else
-    #   session[:name] = params[:name]
-    # end
+    # binding.pry
+    return redirect_to(controller: 'sessions', action: 'new') if !params[:name] || params[:name].empty?
+    session[:name] = params[:name]
+  end
+
+  def destroy
+    if current_user
+      session[:name] = nil
+    end
+    redirect_to(controller: 'sessions', action: 'destroy')
   end
 end
