@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def welcome
-    render "/new"
+    redirect_to controller: "sessions", action: "new" unless session[:name]
   end
 
   def current_user

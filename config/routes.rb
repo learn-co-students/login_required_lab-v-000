@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root :to => "application#welcome"
+  root "application#welcome"
 
   resources :sessions
   delete 'sessions', to: 'sessions#destroy'
