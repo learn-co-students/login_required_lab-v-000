@@ -1,15 +1,15 @@
 class SessionsController < ApplicationController
 
   def new
-    
+    render :new
   end
 
   def create
     if params[:name] == [] || params[:name] == nil
-      render :create
+      redirect_to controller: 'sessions', action: 'new'
     else
-    current_user = params[:name]
-    redirect_to controller: 'sessions', action: 'new'
+    session[:name] = params[:name]
+    redirect_to controller: 'sessions', action: 'create'
     end
   end
 

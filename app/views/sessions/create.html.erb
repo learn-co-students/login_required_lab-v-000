@@ -1,7 +1,6 @@
-<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-<h1>Login</h1>
-  <label>Username:</label><br>
-  <%= text_field_tag :name %><br>
-
-  <input type=submit value='login'>
+<h1>Hi, <%= session[:name] %>.</h1>
+<%= link_to "Secrets", controller: "secrets", action: "show" %>
+# => <a href="/secrets/new"></a>
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+  <input type=submit value='logout'>
 <% end %>
