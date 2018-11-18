@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    return render :create if !params[:name] || params[:name].empty?
+    return render :create if :name == [] || :name == nil
     session[:name] = params[:name]
     redirect_to controller: 'sessions', action: 'new'
   end
