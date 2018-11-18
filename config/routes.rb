@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
 
-  root to: 'sessions#create'
-
+  root :to => "sessions#create"
 
   resources :sessions
   delete 'sessions', to: 'sessions#destroy'
-  
+
   get 'secrets', to: 'secrets#show'
   resources :secrets
 
