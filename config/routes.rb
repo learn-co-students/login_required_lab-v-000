@@ -4,6 +4,12 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  root 'sessions#new'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  post '/logout' => 'sessions#destroy'
+  get '/secret' => 'secrets#show', as: :secret
+  get '/user' => 'application#hello', as: :user
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
