@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root "application#welcome"
 
+  get '/auth/facebook/callback' => 'sessions#create'
+
   resources :sessions
   delete 'sessions', to: 'sessions#destroy'
 
