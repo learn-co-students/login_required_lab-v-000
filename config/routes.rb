@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
 
-  root "application#welcome"
+  root 'application#hello'
 
-  get '/auth/facebook/callback' => 'sessions#create'
+  get 'secrets/new'
 
-  resources :sessions
-  delete 'sessions', to: 'sessions#destroy'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  post '/logout' => 'sessions#destroy'
 
-  get 'secrets', to: 'secrets#show'
-  resources :secrets
+  get '/secret' => 'secrets#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

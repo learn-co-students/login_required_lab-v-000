@@ -1,19 +1,16 @@
 class SessionsController < ApplicationController
-  def create
-    @user = User.find_or_create_by(uid: auth['uid']) do |u|
-      u.name = auth['info']['name']
-      u.email = auth['info']['email']
-      u.image = auth['info']['image']
-    end
-
-    session[:user_id] = @user.id
-
-    render 'welcome/home'
+  def new
   end
 
-  private
+  def create
+    return redirect_to(controller: 'sessions',
+                       action: 'new') if !params[:name] || params[:name].empty?
+    session[:name] = params[:name]
+    redirect_to controller: 'application', action: 'hello'
+  end
 
-  def auth
-    request.env['omniauth.auth']
+  def destroy
+    session.delete :name
+    redirect_to controller: 'application', action: 'hello'
   end
 end
