@@ -7,6 +7,6 @@ class SecretsController < ApplicationController
 
   private
   def require_login
-    redirect_to '/login' unless current_user.nil? or current_user.nil?
+    redirect_to '/login' unless !current_user.nil? or !current_user.blank?
   end
 end
