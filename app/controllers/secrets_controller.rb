@@ -1,8 +1,7 @@
 class SecretsController < ApplicationController
-  before_action :current_user
+  before_action :signed_in?
 
   def new
-    @name = params[:name]
   end
 
   def show

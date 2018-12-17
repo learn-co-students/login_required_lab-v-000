@@ -7,4 +7,12 @@ class ApplicationController < ActionController::Base
     session[:name]
   end
 
+  private
+
+    def signed_in?
+      if !current_user
+        redirect_to new_session_path
+      end
+    end
+
 end

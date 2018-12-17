@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create]
 
-  resources :secrets, only: [:new, :show]
+  resources :secrets, only: [:new]
+
+  get '/secrets/secret_page', to: 'secrets#show', as: 'secret_ingredient'
+
+  post '/logout', to: 'sessions#destroy'
 
   root 'sessions#new'
 
