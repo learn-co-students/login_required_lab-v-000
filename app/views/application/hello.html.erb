@@ -1,7 +1,7 @@
 <% if @user %>
   <h1>Hi, <%= @user%>.</h1>
   <a href='/secrets'>Would you like to know a secret?</a>
-    <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'})%>
+    <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
       <input type="submit" value="logout">
     <% end %>
   <% else %>
