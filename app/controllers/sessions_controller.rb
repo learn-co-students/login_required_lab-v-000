@@ -1,11 +1,12 @@
 class SessionsController < ApplicationController
 	def new
+		render :welcome
 	end
 
 	def create
-	  login
+	  login(params)
 	  if logged_in?
-		  render :welcome
+		  render :'application/welcome'
 	  else
 		  redirect_to '/'
 	  end

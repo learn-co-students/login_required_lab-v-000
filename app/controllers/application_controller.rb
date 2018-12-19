@@ -5,11 +5,11 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :login, :logged_in
 
   def current_user
-	  !session[:name].nil?  && !session[:name].empty? ? session[:name] : nil
+	session[:name]
   end
 
-  def login
-	  	session[:name] = params[:name]
+  def login(params)
+	session[:name] = params[:name]
   end
 
   def logged_in?
@@ -19,6 +19,6 @@ class ApplicationController < ActionController::Base
   private
 
   def require_logged_in
-    redirect_to '/' unless logged_in?
+      redirect_to '/' unless logged_in?
   end
 end
