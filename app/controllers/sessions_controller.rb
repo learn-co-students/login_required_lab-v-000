@@ -1,20 +1,10 @@
 class SessionsController < ApplicationController
 
-    helper_method :current_user
-
     def new
     end
 
-    def show
-        if current_user
-            redirect_to "/secrets"
-        else
-            redirect_to "/login"
-        end
-    end
-
     def create
-        if params[:name].blank?
+        if params[:name].blank? || !params[:name]
             redirect_to "/login"
         else
             session[:name] = params[:name]  
@@ -23,12 +13,8 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-        if session[:name]
-            session.destroy
-            redirect_to '/'
-        else
-            session[:name]=nil
-        end
+        session.delete :name
+        redirect_to '/'
     end
 
 end
