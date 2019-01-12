@@ -25,7 +25,14 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
+  get 'sessions/new'
 
+  get 'secrets/show'
+
+  root 'application#hello'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  post '/logout' => 'sessions#destroy'
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
