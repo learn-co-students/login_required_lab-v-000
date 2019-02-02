@@ -1,0 +1,12 @@
+<h1>Welcome Page</h1>
+
+<% if session[:name].present? %>
+  <h1>Hi, <%= session[:name] %>.</h1>
+  <%= link_to 'secret page', "/secrets/show" %> <br/>
+  <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+  <input type=submit value='logout'>
+  <% end %>
+
+<% else %>
+  <%= link_to 'log in', :login %>
+<% end %>
