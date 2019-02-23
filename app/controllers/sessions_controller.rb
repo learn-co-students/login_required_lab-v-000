@@ -1,28 +1,27 @@
 class SessionsController < ApplicationController
 
+  def index
+    redirect_to login_path
+  end
+
   def new
-    session[:name] = params[:name]
-    redirect_to welcome_path
-  end
-
-  def welcome
-
-  end
-
-  def login
-    # current user isn't doing as it should
-    if current_user = params[:name]
-      redirect_to welcome_path
-    else
-      redirect_to root_path
-    end
   end
 
   def create
-    current_user = params[:session]
+    if params[:name].blank?
+      redirect_to login_path
+    else
+      session[:name] = params[:name]
+      redirect_to welcome_path
+    end
   end
 
-  def show
+  def destroy
+     if session[:name].nil?
+     else
+       session.delete(:name)
+     end
+     redirect_to login_path
   end
 
 end

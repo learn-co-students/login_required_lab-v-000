@@ -6,15 +6,22 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'sessions#index'
 
-  get '/login', to: 'sessions#index', as: 'landing'
+  get '/login', to: 'sessions#new'
 
-  # post '/login', to: 'sessions#login', as: 'login'
+  post '/login', to: 'sessions#create'
 
-  post '/new', to: 'sessions#new', as: 'login'
+  get '/welcome', to: 'secrets#show'
 
-  get '/welcome', to: 'sessions#welcome', as: 'welcome'
+  post '/destroy', to: 'sessions#destroy'
 
-  get '/secrets', to: 'secrets#show', as: 'secrets'
+  # get '/welcome', to: 'sessions#index'
+
+  # get '/welcome', to: 'sessions#welcome', as: 'welcome'
+  #
+  # get '/secrets', to: 'secrets#show', as: 'secrets'
+  #
+  # get '/secretmessage', to: 'secrets#secret', as: 'secretmessage'
+
   # resources :sessions
   # resources :secrets
   # Example of regular route:
