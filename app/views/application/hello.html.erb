@@ -1,0 +1,5 @@
+<h1>Hello there, <%= session[:name] %>.</h1>
+<p>Check out this secret system in predicting the weather by <%= link_to 'Clicking here.', '/secret' %></p>
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+  <input type=submit value='logout'>
+<% end %>
