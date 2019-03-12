@@ -8,7 +8,7 @@ class SecretsController < ApplicationController
   def require_login
     unless current_user
       flash[:error] = "Please login"
-      redirect_to '/sessions/new'
+      redirect_to '/login'
     end
   end
 end
