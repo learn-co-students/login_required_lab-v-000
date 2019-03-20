@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  
+
   def new
 
   end
@@ -7,12 +7,10 @@ class SessionsController < ApplicationController
   def create
     session[:name] = params[:name]
 
-    redirect_to(controller: session, action: new)
+    redirect_to(controller: 'sessions', action: 'new')
   end
 
-  def current_user
-      return head(:forbidden) unless session.include? :name
-    end
+  def destroy
+    session.delete :name
   end
-
 end
