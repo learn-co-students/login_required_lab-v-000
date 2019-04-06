@@ -1,0 +1,10 @@
+<% if session[:current_user].nil? %>
+  <h1><%= link_to "Log In", '/login' %></h1>
+<% else %>
+  <h1>Hi, <%= session[:current_user] %>.</h1>
+  <p><%= link_to "Secrets", '/secrets/show' %></p><br>
+
+  <%= form_tag ({controller: 'sessions', action: 'destory', method: 'post'}) do %>
+    <input type=submit name="" value="logout">
+  <% end %>
+<% end %>
