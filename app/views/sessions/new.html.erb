@@ -1,5 +1,6 @@
 <h2>Log in</h2>
-<% form_for :sessions, url: '/login' do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+  <input name=name>
+  <input type=submit value='login'>
 <% end %>
+

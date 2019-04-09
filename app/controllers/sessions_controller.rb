@@ -12,15 +12,13 @@ class SessionsController < ApplicationController
     end
   end
 
-  def show
-  	@username = session[:name] 
-  end
 
   def destroy
-    if session[:name].present?
+    if current_user
       session.delete :name
-    end
-      redirect_to :login
+    else
+      redirect_to '/login'
+
     end
   end
 end 
