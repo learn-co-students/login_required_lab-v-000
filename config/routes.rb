@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root 'application#welcome'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
-  delete '/', to: 'sessions#destroy' 
+  delete '/logout', to: 'sessions#destroy'
   get '/secrets/show', to: 'secrets#show'
 end

@@ -4,12 +4,4 @@ class SecretsController < ApplicationController
 	def show
 	end
 
-	private
-
-	def require_login
-		if current_user.nil? || current_user == '' 
-			redirect_to '/sessions/new'
-		end
-	end
-
 end
