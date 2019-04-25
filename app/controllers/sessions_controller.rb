@@ -1,29 +1,19 @@
 class SessionsController < ApplicationController
-
-  def show
-    
+  
+  def create
+    if params[:name].nil?
+      redirect_to new_session_path
+    elsif params[:name].empty?
+      redirect_to new_session_path
+    else
+      session[:name] = params[:name]
+    end
   end
 
-  # describe 'create' do
-  #   it 'redirects to login page if :name is nil' do
-  #     post :create, params: { name: nil }
-  #     expect(response).to redirect_to controller: 'sessions', action: 'new'
-  #   end
-
+  def destroy
+    if !session[:name].nil?
+      session.delete :name
+    end
+  end
 
 end
-
-
-
-
-#   it 'redirects to login page if :name is empty' do
-#     post :create, params: { name: '' }
-#     expect(response).to redirect_to controller: 'sessions', action: 'new'
-#   end
-
-#   it 'sets session[:name] if :name was given' do
-#     me = 'Werner Brandes'
-#     post :create, params: { name: me }
-#     expect(@request.session[:name]).to eq me
-#   end
-# end
