@@ -1,14 +1,17 @@
 require 'pry'
 class SecretsController < ApplicationController
+  before_action :require_login
+
   def new
   end
 
   def show
-    binding.pry
-    if params[:name] != current_user
-      redirect_to sessions_path
-    else 
-      render :show
+  
+  end 
+
+ private 
+
+  def require_login
+    redirect_to new_session_path unless session.include? :name
   end
- end
 end
