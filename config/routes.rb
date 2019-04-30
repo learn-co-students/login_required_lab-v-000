@@ -1,12 +1,7 @@
 Rails.application.routes.draw do
-  get 'secrets/new'
 
-  resources :sessions, only: [:index, :new, :create]
-
-  # get 'sessions/new'
-
-  # get 'sessions/index'
-  # post '/sessions'
+  resources :sessions, only: [:index, :new, :create, :show]
+  resources :secrets, only: [:new, :show]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
