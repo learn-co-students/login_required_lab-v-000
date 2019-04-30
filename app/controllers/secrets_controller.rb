@@ -1,19 +1,18 @@
 class SecretsController < ApplicationController
     before_action :require_login
-    skip_before_action :require_login, only: [:index]
-
-    def index
-
-    end
 
     def show
-
+        if current_user != nil
+            render :show
+        end
     end
 
     private
     
     def require_login
-        return head(:forbidden) unless session.include? :user_id
+        if current_user == nil || current_user == ""
+            redirect_to '/login'
+        end
     end
 
 end
