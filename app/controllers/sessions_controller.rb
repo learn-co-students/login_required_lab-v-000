@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    raise params.inspect
     if params[:name] == nil || params[:name] == ""
       redirect_to login_path
     else
