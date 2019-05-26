@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
+  def hello
+    redirect_to controller: 'sessions', action: 'new' unless session[:name]
+  end
+
   def current_user
     session[:name]
   end
