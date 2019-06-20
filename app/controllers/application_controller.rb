@@ -8,5 +8,7 @@ class ApplicationController < ActionController::Base
     return session[:name] unless session[:name].blank?
   end
 
-  
+  def require_logged_in
+    redirect_to login_path unless current_user
+  end
 end
