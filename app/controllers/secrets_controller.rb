@@ -1,4 +1,4 @@
 class SecretsController < ApplicationController
-    def secret 
+    def show 
     end
 end
