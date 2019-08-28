@@ -1,9 +1,5 @@
 class SessionsController < ApplicationController
-  
-  def login
-    @user = User.new
-  end
-  
+ 
   def new 
     @user = User.new
   end
@@ -12,7 +8,7 @@ class SessionsController < ApplicationController
     if !!params[:name] && !params[:name].empty?
       session[:name] = params[:name]
     else
-      redirect_to session_new_path 
+      redirect_to login_path 
     end  
   end
   
