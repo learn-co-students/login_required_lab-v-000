@@ -1,0 +1,10 @@
+<!-- https://learn.co/tracks/full-stack-web-development-v8/module-13-rails/section-12-authentication/login-required-lab -->
+<!--
+
+-->
+<!-- new code start -->
+<h1>Hi, <%= session[:name] %>.</h1>
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+  <input type=submit value='logout'>
+<% end %>
+<!-- new code end -->
