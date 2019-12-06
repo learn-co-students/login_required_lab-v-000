@@ -1,0 +1,10 @@
+<!-- Once logged in, a user should see the welcome page. This page should greet the user and link them to the secret page. -->
+<% if session[:name].nil? || session[:name].empty? %>
+  <%= link_to "Login", root_path %>
+<% else %>
+  <h1>Hi, <%= session[:name] %>.</h1>
+  <h2><%= link_to "Secret Page", secret_path %></h2>
+  <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+    <input type=submit value='logout'>
+  <% end %>
+<% end %>
