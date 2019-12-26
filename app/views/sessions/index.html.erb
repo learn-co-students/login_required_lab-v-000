@@ -1,0 +1,7 @@
+Hello, <%=session[:name]%>.
+<br></br>
+<%=form_tag('/logout') do%>
+<%=submit_tag "Logout"%>
+<%end%>
+<br></br>
+<div><%= link_to "Would you like to know a secret?", secrets_path%> </div>
