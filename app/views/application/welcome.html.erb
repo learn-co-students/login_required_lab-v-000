@@ -1,0 +1,11 @@
+<h1>Welcome to your homepage, <%= current_user %>!</h1>
+
+<p>
+  <!-- <button><%#= link_to "Click here to see the secret page!", the_secret_page_path %></button> -->
+  <%= button_to "Click here to see the secret page!", the_secret_page_path, method: :get %>
+</p>
+
+
+<%= form_tag logout_path do %>
+  <%= submit_tag "Logout" %>
+<% end %>
