@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
     # controller.send(:require_login) and return
   # end # This doesn't work ("Unexpected return")
 
+  # before_action do |controller|
+    # controller.send(:require_login); return if performed?
+  # end # Neither does this.
+
   helper_method :current_user
 
   # Prevent CSRF attacks by raising an exception.
