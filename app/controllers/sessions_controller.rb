@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    if current_user.present? 
+    if current_user
       # I added this; it redirects to the welcome page if you're already logged in.
       redirect_to root_path
     end
