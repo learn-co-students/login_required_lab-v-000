@@ -18,7 +18,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    require_login and return # See ApplicationController
+    # require_login and return # See ApplicationController
+    # Somehow, I don't need this; maybe #require_login returns automatically if called from #before_action?
 
     session.delete :name
     redirect_to login_path
