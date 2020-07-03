@@ -11,10 +11,8 @@ class SessionsController < ApplicationController
     end
   end
 
-  def show
+  def destroy
+    session.delete :name
   end
 
-  def current_user
-
-  end
 end
