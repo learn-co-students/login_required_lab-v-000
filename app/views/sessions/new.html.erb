@@ -1,0 +1,8 @@
+<h1>Login Required</h1>
+<p>Hello! You must tell us your name to view the secret</p>
+
+<%= form_tag('login') do %>
+<label for="name">Your name:</label>
+<%= text_field_tag "name" %>
+<%= submit_tag "Log In"%>
+<% end %>
