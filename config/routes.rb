@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   post '/logout', to: 'sessions#destroy'
   get '/secret', to: 'secrets#show'
 
-  get '/', to: 'sessions#index'
+  root 'sessions#show'
 end
