@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   root 'sessions#index'
 
-  get '/login', to: 'sessions#index'
-  get '/secrets', to: 'secrets#show'
+  get  '/login', to: 'sessions#show'
+  get '/new', to: 'sessions#new'
+  post '/', to: 'sessions#create'
+  post '/destroy', to: 'sessions#destroy'
 
-  resources :sessions
+  get  '/secrets', to: 'secrets#show'
+
+  
 end

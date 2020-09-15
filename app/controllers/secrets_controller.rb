@@ -1,9 +1,7 @@
 class SecretsController < ApplicationController
+  
   def show
-    redirect_to '/' if !current_user
+    redirect_to '/new' if !current_user
   end
 
-  def new 
-    
-  end
 end
