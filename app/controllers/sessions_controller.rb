@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
 
   def new 
-    # automagically renders template by convention
   end
 
   def create
