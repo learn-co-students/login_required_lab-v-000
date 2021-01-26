@@ -1,0 +1,9 @@
+<!-- <form action="<%= login_path %>" method="post">
+  <input type="text" name="name" id="name">
+  <button type="submit">your face</button>
+</form> -->
+
+<%= form_tag(login_path) do %>
+  <%= text_field_tag(:name) %>
+  <%= submit_tag("Submit") %>
+<% end %>
