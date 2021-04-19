@@ -7,6 +7,7 @@ RSpec.describe SessionsController do
       expect(response).to redirect_to controller: 'sessions', action: 'new'
     end
 
+
     it 'redirects to login page if :name is empty' do
       post :create, params: { name: '' }
       expect(response).to redirect_to controller: 'sessions', action: 'new'
@@ -33,3 +34,4 @@ RSpec.describe SessionsController do
     end
   end
 end
+
